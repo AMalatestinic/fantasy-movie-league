@@ -1,7 +1,7 @@
 import GoogleProvider from "next-auth/providers/google";
 import dbConnect from "@/lib/dbConnect";
 import User from "@/models/userModel";
-import type { DefaultUser, Session } from "next-auth";
+import type { DefaultUser, NextAuthOptions, Session } from "next-auth";
 
 // Ensures the necessary environment variables are set
 if (
@@ -12,7 +12,7 @@ if (
   throw new Error("Missing environment variables for NextAuth configuration");
 }
 
-export const authOptions = {
+export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
