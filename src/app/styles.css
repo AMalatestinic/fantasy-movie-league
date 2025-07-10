@@ -1,0 +1,42 @@
+/* Landing Page Styles */
+
+.landing-page {
+  max-width: 720px;
+  margin: 3rem auto 5rem;
+  padding: 0 1.5rem;
+  color: #1f2937; /* dark gray */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.landing-page > div {
+  margin-bottom: 3rem;
+}
+
+.landing-page h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: #111827;
+}
+
+.landing-page p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .landing-page {
+    margin: 2rem 1rem 3rem;
+  }
+
+  .landing-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .landing-page p {
+    font-size: 1rem;
+  }
+}

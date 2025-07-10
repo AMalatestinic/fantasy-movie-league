@@ -1,0 +1,22 @@
+import { NextRequest, NextResponse } from "next/server";
+import dbConnect from "@/lib/dbConnect";
+import User from "@/models/userModel"; // Adjust the import path as needed
+
+export async function GET(
+  req: NextRequest,
+  { params }: { params: { userId: string } }
+) {
+  await dbConnect();
+
+  const { userId } = await params;
+
+  try {
+    const user = await User.findById(userId);
+    if (!user) {
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
+    }
+    return NextResponse.json(user);
+  } catch (error) {
+    return NextResponse.json({ error: "Server error" }, { status: 500 });
+  }
+}

@@ -1,0 +1,162 @@
+/* Create League Page Styles */
+
+.create-league-page {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.league-header h2 {
+  font-size: 2rem;
+  margin: 0;
+  color: #111827;
+  text-align: center;
+}
+
+.create-league-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.create-league-form label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.create-league-form input,
+.create-league-form textarea {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.create-league-form input:focus,
+.create-league-form textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.create-league-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.season-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.season-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.season-buttons button {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  font-weight: 500;
+}
+
+.season-buttons button.selected {
+  background-color: #3b82f6;
+  color: white;
+  border-color: #2563eb;
+}
+
+.season-buttons button:hover {
+  background-color: #e5e7eb;
+}
+
+.create-button {
+  background-color: #10b981;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.create-button:hover {
+  background-color: #059669;
+}
+
+/* Reuse the back-button style */
+.back-button {
+  align-self: flex-start;
+  padding: 0.6rem 1.2rem;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.back-button:hover {
+  background: #e5e7eb;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .season-buttons {
+    flex-direction: column;
+  }
+
+  .create-button,
+  .back-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.label-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.login-btn {
+  background-color: #facc15; /* yellow accent */
+  border: none;
+  color: #1f2937;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.login-message {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.5rem;
+  align-items: center;
+  color: #111827;
+}
