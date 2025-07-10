@@ -17,7 +17,7 @@ function shuffle(array: any[]) {
 // GET: Fetch drafted movies for a league
 export async function GET(
   req: NextRequest,
-  { params }: { params: { leagueId: string } }
+  { params }: { params: Promise<{ leagueId: string }> }
 ) {
   await dbConnect();
   const { leagueId } = await params;
@@ -56,7 +56,7 @@ export async function GET(
 // POST: Save drafted movies for a league
 export async function POST(
   req: NextRequest,
-  { params }: { params: { leagueId: string } }
+  { params }: { params: Promise<{ leagueId: string }> }
 ) {
   await dbConnect();
   const { leagueId } = await params;

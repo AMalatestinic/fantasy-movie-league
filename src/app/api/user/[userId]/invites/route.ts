@@ -4,7 +4,7 @@ import League from "@/models/leagueSchema";
 
 export async function GET(
   _: Request,
-  { params }: { params: { userId: string } }
+  { params }: { params: Promise<{ userId: string }> }
 ) {
   const { userId } = await params;
   await dbConnect();

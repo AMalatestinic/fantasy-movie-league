@@ -3,11 +3,11 @@ import League from "@/models/leagueSchema";
 import User from "@/models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/authOptions";
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { leagueId: string } }
+  { params }: { params: Promise<{ leagueId: string }> }
 ) {
   const { leagueId } = await params;
   try {
@@ -36,7 +36,7 @@ export async function GET(
 
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { leagueId: string } }
+  { params }: { params: Promise<{ leagueId: string }> }
 ) {
   try {
     await dbConnect();
@@ -51,8 +51,8 @@ export async function DELETE(
       return NextResponse.json({ error: "User not found" }, { status: 401 });
     }
 
-    const leagueId = params.leagueId;
-
+    const { leagueId } = await params;
+    console.log(leagueId);
     const league = await League.findById(leagueId);
     console.log("League to delete:", league);
     if (!league) {
@@ -83,7 +83,7 @@ export async function DELETE(
 
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { leagueId: string } }
+  { params }: { params: Promise<{ leagueId: string }> }
 ) {
   await dbConnect();
   const { leagueId } = await params;

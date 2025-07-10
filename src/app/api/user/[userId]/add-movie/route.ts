@@ -5,7 +5,7 @@ import Movie from "@/models/movieSchema";
 
 export async function POST(
   req: NextRequest,
-  { params }: { params: { userId: string } }
+  { params }: { params: Promise<{ userId: string }> }
 ) {
   await dbConnect();
 

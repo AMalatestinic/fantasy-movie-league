@@ -388,7 +388,9 @@ export default function Draft() {
           {userDraftCount >= teamSize && (
             <div>
               <p className="text-green-700 text-sm mt-2">
-                <strong>Your team is full. You can't draft more movies!</strong>
+                <strong>
+                  Your team is full. You cannot draft more movies!
+                </strong>
               </p>
               <button
                 className="league-page-btn"

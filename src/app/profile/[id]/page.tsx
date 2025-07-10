@@ -41,6 +41,7 @@ export default function Profile() {
     const res = await axios.get(`/api/profile/${userId}`);
     setUser(res.data);
   };
+
   useEffect(() => {
     const getUser = async () => {
       try {
@@ -57,31 +58,8 @@ export default function Profile() {
 
     if (userId) getUser();
   }, [userId]);
+
   if (loading) return <div>Loading user info...</div>;
-
-  const deleteLeague = async (leagueId: string) => {
-    if (!confirm("Are you sure you want to delete this league?")) return;
-
-    try {
-      const res = await fetch(`/api/league?leagueId=${leagueId}`, {
-        method: "DELETE",
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data.error || "Failed to delete league");
-      }
-
-      // Remove the league from state
-      setUser((prev) => ({
-        ...prev,
-        leagues: prev.leagues.filter((l: any) => l._id !== leagueId),
-      }));
-    } catch (err) {
-      console.error("Error deleting league:", err);
-    }
-  };
 
   return (
     <div>
@@ -108,7 +86,7 @@ export default function Profile() {
           </div>
 
           <div className="user-leagues">
-            <h2>{user.username}'s Leagues</h2>
+            <h2>{user.username}s Leagues</h2>
             {user.leagues.length > 0 ? (
               <ul>
                 {(user.leagues as League[]).map((league, i) => {

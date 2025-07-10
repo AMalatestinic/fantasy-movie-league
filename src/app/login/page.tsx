@@ -1,10 +1,8 @@
 "use client";
 import { useRouter } from "next/navigation";
-import Header from "../partials/Header/header";
 import { signIn, signOut, useSession } from "next-auth/react";
 
 import "./styles.css";
-import { useEffect } from "react";
 
 export default function Login() {
   const router = useRouter();

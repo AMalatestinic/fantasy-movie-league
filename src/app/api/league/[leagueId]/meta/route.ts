@@ -4,10 +4,10 @@ import League from "@/models/leagueSchema";
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { leagueId: string } }
+  { params }: { params: Promise<{ leagueId: string }> }
 ) {
   await dbConnect();
-  const { leagueId } = params;
+  const { leagueId } = await params;
 
   try {
     const league = await League.findById(leagueId).select("_id name");

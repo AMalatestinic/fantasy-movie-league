@@ -4,7 +4,7 @@ import User from "@/models/userModel"; // Adjust the import path as needed
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { userId: string } }
+  { params }: { params: Promise<{ userId: string }> }
 ) {
   await dbConnect();
 
