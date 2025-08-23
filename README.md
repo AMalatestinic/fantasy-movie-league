@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Fantasy Movie League 🎬
 
-## Getting Started
+## Table of contents
 
-First, run the development server:
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Fantasy Movie League is a web app inspired by fantasy sports leagues — but for movies. Users can create leagues, draft movies onto their teams, and compete based on box office performance. It brings a competitive, gamified spin to movie releases.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Screenshots
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![CreateLeague](./public/create-a-league.png)
+![DraftRoom](./public/draft-room.png)
+![LeaguePage](./public/league-page.png)
 
-## Learn More
+### Links
 
-To learn more about Next.js, take a look at the following resources:
+- Live Demo: [Live Demo](https://capstone-project-ashen-theta.vercel.app/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## My Process
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Built With
 
-## Deploy on Vercel
+- Semantic HTML5 markup
+- CSS Grid & Flexbox
+- Mobile-first responsive design
+- React
+  – Component-based UI
+- Next.js
+  – API routes & server-side rendering
+- MongoDB
+  – Database for leagues, users, and movies
+- Custom draft logic (team size limits, no duplicate movies per league)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### What I Learned
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Design Next.js API routes that interact seamlessly with a MongoDB backend
+- Structure a full-stack app using React for frontend and Next.js backend in one cohesive project
+
+## Author
+
+- LinkedIn - [Anthony Malatestinic](https://www.linkedin.com/in/anthony-malatestinic-2003b5154)
+- GitHub - [@AMalatestinic](https://github.com/AMalatestinic)
